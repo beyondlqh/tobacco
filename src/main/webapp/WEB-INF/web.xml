@@ -1,0 +1,66 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>Add</servlet-name>
+		<servlet-class>com.iotsec.tobacco.servlet.Add</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>List</servlet-name>
+		<servlet-class>com.iotsec.tobacco.servlet.List</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>detail</servlet-name>
+		<servlet-class>com.iotsec.tobacco.servlet.Detail</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>query</servlet-name>
+		<servlet-class>com.iotsec.tobacco.servlet.Query</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>state</servlet-name>
+		<servlet-class>com.iotsec.tobacco.servlet.State</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>zhanyou</servlet-name>
+		<servlet-class>com.iotsec.tobacco.servlet.Zhanyou</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>shifang</servlet-name>
+		<servlet-class>com.iotsec.tobacco.servlet.Shifang</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add</servlet-name>
+		<url-pattern>/Add</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>List</servlet-name>
+		<url-pattern>/list</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>detail</servlet-name>
+		<url-pattern>/detail</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>query</servlet-name>
+		<url-pattern>/q</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>state</servlet-name>
+		<url-pattern>/chaxun</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zhanyou</servlet-name>
+		<url-pattern>/zhanyou</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>shifang</servlet-name>
+		<url-pattern>/shifang</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

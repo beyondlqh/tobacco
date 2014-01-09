@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.iotsec.tobacco.javabean.Record" table="Record">
+		<meta attribute="class-description">
+			Represents a single record.
+			@author QinghaoLiu
+		</meta>
+
+		<meta attribute="class-scope">public</meta>
+
+		<id name="id" type="long" column="ID">
+			<meta attribute="scope-set">private</meta>
+			<generator class="increment" />
+		</id>
+
+		<property name="PID" type="string">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="PID" length="30" not-null="true" />
+		</property>
+		<property name="Name" type="string">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="Name" length="30" not-null="true" />
+		</property>
+		<property name="Factory" type="string">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="Factory" length="30" not-null="true" />
+		</property>
+		<property name="Date" type="string">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="Date" length="30" not-null="true" />
+		</property>
+		<property name="Batch" type="string">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="Batch" length="30" not-null="true" />
+		</property>
+		<property name="CryptoFlag" type="string">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="CryptoFlag" length="30" not-null="true" />
+		</property>
+		<property name="Code" type="string">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="Code" length="30" not-null="false" />
+		</property>
+
+	</class>
+
+</hibernate-mapping>
