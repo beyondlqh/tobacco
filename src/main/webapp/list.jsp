@@ -50,7 +50,7 @@
 				<td><%=record.getCryptoFlag()%></td>
 				<td><a
 					href="detail?id=<%=record.getPID()%>&flag=<%=record.getCryptoFlag().equals("DES") ? "00"
-							: "01"%>">二维码</a></td>
+							: (record.getCryptoFlag().equals("DESede")?"01":"02")%>">二维码</a></td>
 			</tr>
 			<%
 				}

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.iotsec.tobacco.qrcode.QRCode;
 import com.iotsec.tobacco.security.DES;
 import com.iotsec.tobacco.security.DESede;
+import com.iotsec.tobacco.security.SMS4;
 
 /**
  * Servlet implementation class Detail
@@ -42,9 +43,11 @@ public class Detail extends HttpServlet {
 		String miwenPID;
 		if(request.getParameter("flag").equals("00")){
 			 miwenPID= DES.getInstance().en(request.getParameter("id"));}
-		else{
+		else if (request.getParameter("flag").equals("01")){
 			miwenPID= DESede.getInstance().en(request.getParameter("id"));
-		}	
+		}else{
+			miwenPID= new SMS4().en(request.getParameter("id"));
+		}
 		String plain= "http://61.160.98.53:5033"+ "/q?c="+ (request.getParameter("flag"))+ miwenPID;
 		QRCode.create(plain,request.getSession().getServletContext().getRealPath("")+ File.separator + miwenPID+".gif");
 		request.setAttribute("PID", miwenPID);

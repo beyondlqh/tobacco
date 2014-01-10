@@ -38,11 +38,11 @@
 				<tr>
 					<td colspan="2" align="center"><input type="radio"
 						name="CryptoFlag" checked="checked" value="DES">DES <input
-						type="radio" name="CryptoFlag" value="DESede">3DES</td>
+						type="radio" name="CryptoFlag" value="DESede">3DE<input
+						type="radio" name="CryptoFlag" value="SM4">SM4</td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><input type="submit"
-						value="保存"></td>
+					<td colspan="2" align="center"><input type="submit" value="保存"></td>
 				</tr>
 			</table>
 		</form>

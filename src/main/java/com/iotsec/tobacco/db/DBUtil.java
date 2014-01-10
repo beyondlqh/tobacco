@@ -1,7 +1,9 @@
 package com.iotsec.tobacco.db;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
 
 public class DBUtil {
 
@@ -14,14 +16,16 @@ public class DBUtil {
 	private DBUtil() {
 	}
 	
-	@SuppressWarnings("deprecation")
+
 	public static SessionFactory getInstance(){
 		if(sessionFactory==null){
 			synchronized(DBUtil.class){
 				if(sessionFactory==null){
 					Configuration config = new Configuration();
 					config.configure();
-					sessionFactory = config.buildSessionFactory();
+					StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder(); 
+					ServiceRegistry serviceRegistry = serviceRegistryBuilder.applySettings(config.getProperties()).build();
+					sessionFactory = config.buildSessionFactory(serviceRegistry); 					
 				}
 			}
 			

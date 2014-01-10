@@ -15,6 +15,7 @@ import com.iotsec.tobacco.db.DBUtil;
 import com.iotsec.tobacco.javabean.Record;
 import com.iotsec.tobacco.security.DES;
 import com.iotsec.tobacco.security.DESede;
+import com.iotsec.tobacco.security.SMS4;
 
 /**
  * Servlet implementation class Shifang
@@ -52,12 +53,14 @@ public class Shifang extends HttpServlet {
 		String idmingwen = null;
 		String code = request.getParameter("p");
 		try {
+
 			if (flag.equals("00")) {
 				idmingwen = DES.getInstance().de(idmiwen);
-			} else {
+			} else if (flag.equals("01")) {
 				idmingwen = DESede.getInstance().de(idmiwen);
-			}		
-			
+			} else {
+				idmingwen = new SMS4().de(idmiwen);
+			}
 		} catch (Exception e) {
 
 			request.setAttribute("i", "0");
@@ -91,7 +94,8 @@ public class Shifang extends HttpServlet {
 			}
 			if (list.get(0).getCode().equals(code)) {
 				tx = session.beginTransaction();
-				Record r = (Record) session.get(Record.class, list.get(0).getId());
+				Record r = (Record) session.get(Record.class, list.get(0)
+						.getId());
 				r.setCode("");
 				tx.commit();
 				request.setAttribute("i", "1");

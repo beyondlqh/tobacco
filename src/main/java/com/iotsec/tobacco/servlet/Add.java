@@ -1,6 +1,7 @@
 package com.iotsec.tobacco.servlet;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -45,6 +46,7 @@ public class Add extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		String ID = request.getParameter("PID");
 		String Name = request.getParameter("Name");
 		String Factory = request.getParameter("Factory");

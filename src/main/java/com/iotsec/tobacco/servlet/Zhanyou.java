@@ -15,6 +15,7 @@ import com.iotsec.tobacco.db.DBUtil;
 import com.iotsec.tobacco.javabean.Record;
 import com.iotsec.tobacco.security.DES;
 import com.iotsec.tobacco.security.DESede;
+import com.iotsec.tobacco.security.SMS4;
 
 /**
  * Servlet implementation class Zhanyou
@@ -56,8 +57,10 @@ public class Zhanyou extends HttpServlet {
 			
 			if (flag.equals("00")) {
 				idmingwen = DES.getInstance().de(idmiwen);
-			} else {
+			} else if (flag.equals("01")) {
 				idmingwen = DESede.getInstance().de(idmiwen);
+			} else {
+				idmingwen = new SMS4().de(idmiwen);
 			}
 			
 		} catch (Exception e) {
