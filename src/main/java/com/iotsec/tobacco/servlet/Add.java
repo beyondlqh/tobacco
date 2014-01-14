@@ -51,7 +51,6 @@ public class Add extends HttpServlet {
 		String Name = request.getParameter("Name");
 		String Factory = request.getParameter("Factory");
 		String Date = request.getParameter("Date");
-		System.out.println(Date);
 		String Batch = request.getParameter("Batch");
 		String CryptoFlag = request.getParameter("CryptoFlag");
 

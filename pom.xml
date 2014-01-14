@@ -45,7 +45,7 @@
 				<configuration>
 					<path>/${project.build.finalName}</path>
 					<server>tomcat7</server>
-					<url>http://192.168.115.200:8080/manager/text/</url>
+					<url>http://localhost:8080/manager/text/</url>
 				</configuration>
 			</plugin>
 			<plugin>
