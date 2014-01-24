@@ -10,7 +10,7 @@
 	<center>
 		<div id="header_index">
 			<h1>
-				<a href="index.html" title="烟草防伪与追溯系统">烟草防伪与追溯系统</a>
+				<a href="list" title="返回首页">返回首页</a>
 			</h1>
 		</div>
 		<form action=Add method="post">

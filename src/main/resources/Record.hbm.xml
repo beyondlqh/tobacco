@@ -45,6 +45,10 @@ PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 			<meta attribute="use-in-tostring">true</meta>
 			<column name="Code" length="30" not-null="false" />
 		</property>
+        <property name="Num" type="long">
+            <meta attribute="use-in-tostring">true</meta>
+            <column name="Num" length="30" not-null="false" />
+        </property>
 
 	</class>
 

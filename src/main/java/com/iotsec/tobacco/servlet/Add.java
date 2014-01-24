@@ -55,7 +55,7 @@ public class Add extends HttpServlet {
 		String CryptoFlag = request.getParameter("CryptoFlag");
 
 		Record record = new Record(ID, Name, Factory, Date, Batch, CryptoFlag,
-				"");
+				"",0);
 
 		Session session = DBUtil.getInstance().openSession();
 		Transaction tx = null;
@@ -63,7 +63,6 @@ public class Add extends HttpServlet {
 			tx = session.beginTransaction();
 			session.save(record);
 			tx.commit();
-
 		} catch (RuntimeException e) {
 			if (tx != null) {
 				tx.rollback();

@@ -1,5 +1,5 @@
 package com.iotsec.tobacco.javabean;
-// Generated 2014-1-7 19:55:42 by Hibernate Tools 3.2.2.GA
+// Generated 2014-1-22 11:30:49 by Hibernate Tools 3.2.2.GA
 
 
 
@@ -19,6 +19,7 @@ public class Record  implements java.io.Serializable {
      private String Batch;
      private String CryptoFlag;
      private String Code;
+     private long Num;
 
     public Record() {
     }
@@ -32,7 +33,7 @@ public class Record  implements java.io.Serializable {
         this.Batch = Batch;
         this.CryptoFlag = CryptoFlag;
     }
-    public Record(String PID, String Name, String Factory, String Date, String Batch, String CryptoFlag, String Code) {
+    public Record(String PID, String Name, String Factory, String Date, String Batch, String CryptoFlag, String Code, long Num) {
        this.PID = PID;
        this.Name = Name;
        this.Factory = Factory;
@@ -40,6 +41,7 @@ public class Record  implements java.io.Serializable {
        this.Batch = Batch;
        this.CryptoFlag = CryptoFlag;
        this.Code = Code;
+       this.Num = Num;
     }
    
     public long getId() {
@@ -98,6 +100,13 @@ public class Record  implements java.io.Serializable {
     public void setCode(String Code) {
         this.Code = Code;
     }
+    public long getNum() {
+        return this.Num;
+    }
+    
+    public void setNum(long Num) {
+        this.Num = Num;
+    }
 
     /**
      * toString
@@ -114,6 +123,7 @@ public class Record  implements java.io.Serializable {
       buffer.append("Batch").append("='").append(getBatch()).append("' ");			
       buffer.append("CryptoFlag").append("='").append(getCryptoFlag()).append("' ");			
       buffer.append("Code").append("='").append(getCode()).append("' ");			
+      buffer.append("Num").append("='").append(getNum()).append("' ");			
       buffer.append("]");
       
       return buffer.toString();
